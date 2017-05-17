@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flash Card Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<script src="assets/javascript/flashcards-cloze.js"></script>
+	<script src="assets/javascript/flashcards-basic.js"></script>
+	<script src="assets/javascript/bundle.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse text-center">
+		<h1 class="navbarH1">Flash Card Generator</h1>
+	</nav>
+
+	<div class="conatiner-fluid text-center">
+
+		<div id="everything">
+
+			<div class="row">
+				<div class="col-md-12">
+					<h1 id="message"> Which type of cards would you like to make?</h1>
+				</div>
+			</div>
+
+			<div class="row text-center">
+
+				<form id="input-box">
+					<input id="user-input"> <button class="btn" id="user-send"> Send </button>
+				</form>
+
+
+				<div id="theButtons">
+
+					<button class="btn" id="basicCard"> Basic Card </button>
+					<button class="btn" id="clozeCard"> Cloze Card </button>
+
+				</div>
+
+				<div>
+					<h3 id="flashcards-length"></h3><h3 id="flashcards-numbers"></h3>
+				</div>
+
+				<div id="start">
+					<button class="btn btn-primary"> Start Studying </button>
+				</div>
+
+			</div>
+
+
+		</div>
+
+	<div class="row">
+
+		<div class="col-md-6 col-md-offset-5">
+
+			<div id="card"> 
+				<div class="front"> 
+					
+				</div> 
+
+				<div class="back">
+					
+				</div> 
+			</div>
+
+		</div>
+
+	</div>
+
+	</div>  
+</body>
+</html>

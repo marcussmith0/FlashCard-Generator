@@ -1,0 +1,30 @@
+.navbarH1 {
+
+	color: white
+
+}
+
+.back {
+
+	background-color: #eefffd;
+	border: 2px solid  #c5fffa;
+	border-radius: 5px;
+	height: 0px;
+	width: 	0px;
+}
+
+.front {
+
+	background-color:  #e7ffe9;
+	border: 2px solid  #c5ffcb;
+	border-radius: 5px;
+	height: 0px;
+	width: 0px;
+
+}
+
+#card {
+	height: 250px;
+	width: 250px;
+}
+
