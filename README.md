@@ -6,3 +6,5 @@ and then a word that they would like removed from the statement. The removed wor
 will appear on the front as the question.
 
 You must create at least two flashcards before you can study!
+
+URL: https://marcussmith0.github.io/FlashCard-Generator/
