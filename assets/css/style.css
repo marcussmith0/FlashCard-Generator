@@ -25,6 +25,9 @@
 
 #card {
 	height: 250px;
-	width: 250px;
+	width: 450px;
 }
 
+table {
+	margin-top: 15px;
+}

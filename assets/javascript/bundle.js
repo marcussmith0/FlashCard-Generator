@@ -179,23 +179,61 @@ $( document ).ready(function() {
 
 	});
 
+	$("#next-button").on("click", function(e){
+		e.preventDefault();
+
+		presentCard();
+	});
+
+	$("#add-card").on("click", function(e){
+		e.preventDefault();
+
+		$("#everything").css("display", "block");
+		$("#next-button").css("display", "none");
+		$("#card").css("display", "none");
+		$("#add-card").css("display", "none");
+
+		front();
+
+	})
+
+
 	function presentCard () {
+
 		$("#card").flip({
 			axis: 'y',
 			trigger: 'click'
 		});
+		
+		$("#card").css("display", "block");
+		$("#next-button").css("display", "block");
+		$("#add-card").css("display", "block");
 
 		var cardIndex = Math.floor((Math.random() * flashCards.length ));
 
 		if (cardTypeChoice === "basic") {
 
-			$(".front").text(flashCards[cardIndex].front);
-			$(".back").text(flashCards[cardIndex].back);
+
+			$(".front").html(
+							  "<h2> Front </h2>" + "\n" +
+							  "<h3>" + flashCards[cardIndex].front + "</h3>");
+
+			$(".back").html(
+							"<h2> Back </h2>" + "\n" +
+							"<h3>" + flashCards[cardIndex].back + "</h3>"
+																		);
 
 		} else if (cardTypeChoice === "cloze") {
 
-			$(".front").text(flashCards[cardIndex].partialText);
-			$(".back").text(flashCards[cardIndex].fullText);
+			$(".front").html(
+							  "<h2> Front </h2>" + "\n" +
+							  "<h3>" + flashCards[cardIndex].partialText + "</h3>");
+
+			$(".back").html(
+							"<h2> Back </h2>" + "\n" +
+							"<h3>" + flashCards[cardIndex].deletion + "</h3>"
+																		);
+
 
 		}
 

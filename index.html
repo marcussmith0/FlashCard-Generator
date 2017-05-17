@@ -37,7 +37,7 @@
 
 			<div class="row text-center">
 
-				<form id="input-box">
+				<form id="input-box" style="display: none">
 					<input id="user-input"> <button class="btn" id="user-send"> Send </button>
 				</form>
 
@@ -53,7 +53,7 @@
 					<h3 id="flashcards-length"></h3><h3 id="flashcards-numbers"></h3>
 				</div>
 
-				<div id="start">
+				<div id="start" style="display: none">
 					<button class="btn btn-primary"> Start Studying </button>
 				</div>
 
@@ -64,9 +64,9 @@
 
 	<div class="row">
 
-		<div class="col-md-6 col-md-offset-5">
+		<div class="col-md-6 col-md-offset-4">
 
-			<div id="card"> 
+			<div id="card" style="display: none"> 
 				<div class="front"> 
 					
 				</div> 
@@ -74,6 +74,28 @@
 				<div class="back">
 					
 				</div> 
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-3 col-md-offset-5">
+
+				<table border="0">
+					<tr>
+					<td>
+						<button id="next-button" class="btn btn-primary" style="display: none"> Next Card </button>
+					</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
+						<button id="add-card" class="btn btn-primary" style="display: none"> Add Card </button>
+					</td>
+					</tr>
+				</table>
+
 			</div>
 
 		</div>
