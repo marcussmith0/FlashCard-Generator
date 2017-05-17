@@ -1,7 +1,5 @@
 .navbarH1 {
-
 	color: white
-
 }
 
 .back {
@@ -14,13 +12,11 @@
 }
 
 .front {
-
 	background-color:   #ebdef0 ;
 	border: 2px solid   #c39bd3 ;
 	border-radius: 8px;
 	height: 0px;
 	width: 0px;
-
 }
 
 #card {

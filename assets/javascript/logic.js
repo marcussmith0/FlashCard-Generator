@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
 
 	$("#basicCard").on("click", function() {
-		console.log("the basicCard button was clicked!");
+		
 
 		cardTypeChoice = "basic";
 
@@ -28,7 +28,6 @@ $( document ).ready(function() {
 	});
 
 	$("#clozeCard").on("click", function() {
-		console.log("the clozeCard button was clicked!");
 
 		cardTypeChoice = "cloze";
 
@@ -101,9 +100,6 @@ $( document ).ready(function() {
 
 			frontContentExists = false;
 
-			console.log(frontCard);
-			console.log(backCard);
-
 			cardType();
 
 
@@ -115,17 +111,12 @@ $( document ).ready(function() {
 	function makeBasicCard () {
 
 		var basicCardsImport = new Basic(frontCard, backCard);
-
-		console.log("the flash card front is: " + basicCardsImport.front);
-		console.log("the flash card back is: " + basicCardsImport.back);
-
-
-
 	}
 
 	function makeClozeCard () {
 
-		var basicCardsImport = new Basic(frontCard, backCard);
+
+		var clozeCardsImport = new ClozeCard(frontCard, backCard);
 
 
 

@@ -16,10 +16,4 @@ function ClozeCard(fullText, deletion) {
     }
 }
 
-var rapper = new ClozeCard("Kendrick Lamar is the greatest rapper of all time!.", "Kendrick Lamar");
-
-console.log(rapper.fullText);
-console.log(rapper.partialText);
-console.log(rapper.deletion);
-
 module.exports = ClozeCard;
