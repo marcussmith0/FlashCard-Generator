@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Baloo|Noto+Serif" rel="stylesheet">
     <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -19,10 +20,10 @@
 	<script src="assets/javascript/bundle.js"></script>
 
 </head>
-<body>
+<body background="assets/images/concrete.png">
 
     <nav class="navbar navbar-inverse text-center">
-		<h1 class="navbarH1">Flash Card Generator</h1>
+		<h1 class="navbarH1" style="font-family: 'Baloo', cursive;" >Flash Card Generator</h1>
 	</nav>
 
 	<div class="conatiner-fluid text-center">
@@ -31,21 +32,21 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<h1 id="message"> Which type of cards would you like to make?</h1>
+					<h1 id="message" style="font-family: 'Baloo', cursive;"> Which type of flashcards would you like to make?</h1>
 				</div>
 			</div>
 
 			<div class="row text-center">
 
 				<form id="input-box" style="display: none">
-					<input id="user-input"> <button class="btn" id="user-send"> Send </button>
+					<input id="user-input"> <button class="btn btn-primary" id="user-send"> Add </button>
 				</form>
 
 
 				<div id="theButtons">
 
-					<button class="btn" id="basicCard"> Basic Card </button>
-					<button class="btn" id="clozeCard"> Cloze Card </button>
+					<button class="btn btn-primary" id="basicCard"> Basic Card </button>
+					<button class="btn btn-success" id="clozeCard"> Cloze Card </button>
 
 				</div>
 
@@ -85,7 +86,7 @@
 				<table border="0">
 					<tr>
 					<td>
-						<button id="next-button" class="btn btn-primary" style="display: none"> Next Card </button>
+						<button id="next-button" class="btn btn-success" style="display: none"> Next Card </button>
 					</td>
 					<td>
 						&nbsp;&nbsp;&nbsp;

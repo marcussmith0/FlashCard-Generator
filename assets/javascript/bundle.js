@@ -76,7 +76,6 @@ $( document ).ready(function() {
 
 
 	$("#basicCard").on("click", function() {
-		console.log("the basicCard button was clicked!");
 
 		cardTypeChoice = "basic";
 
@@ -85,7 +84,6 @@ $( document ).ready(function() {
 	});
 
 	$("#clozeCard").on("click", function() {
-		console.log("the clozeCard button was clicked!");
 
 		cardTypeChoice = "cloze";
 
@@ -164,6 +162,8 @@ $( document ).ready(function() {
 		e.preventDefault();
 
 		inputContent = $("#user-input").val().trim();
+
+		$("#user-input").val("");
 
 		determineSide();
 
@@ -255,9 +255,6 @@ $( document ).ready(function() {
 
 			frontContentExists = false;
 
-			console.log(frontCard);
-			console.log(backCard);
-
 			cardType();
 
 		}
@@ -267,9 +264,6 @@ $( document ).ready(function() {
 	function makeBasicCard () {
 
 		var basicCardsImport = new Basic(frontCard, backCard);
-
-		console.log("the flash card front is: " + basicCardsImport.front);
-		console.log("the flash card back is: " + basicCardsImport.back);
 
 		flashCards.push(basicCardsImport);
 
@@ -290,15 +284,19 @@ $( document ).ready(function() {
 
 		var clozeCardsImport = new ClozeCard(frontCard, backCard);
 
-		console.log("the flash card full text is: " + clozeCardsImport.fullText);
-		console.log("the flash card front is: " + clozeCardsImport.partialText);
-		console.log("the flash card back is: " + clozeCardsImport.deletion);
-		console.log("if the word is true of false is: " + clozeCardsImport.wordExists);  
-
 		if(!clozeCardsImport.wordExists) {
 
 			$("#message").empty();
 			$("#message").text("That word doesn't exist in the statement! Try again.").css("color", "red");
+
+			setTimeout(function(){
+            	front();
+        	},2000);
+
+		} else if (clozeCardsImport.fullText === clozeCardsImport.deletion) {
+
+			$("#message").empty();
+			$("#message").text("You can't delete the whole statement! Try again.").css("color", "red");
 
 			setTimeout(function(){
             	front();
