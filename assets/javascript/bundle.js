@@ -59,11 +59,12 @@ $( document ).ready(function() {
 
 	$("#input-box").css("display", "none");
 	$("#start").css("display", "none");
+	$('[data-toggle="tooltip"]').tooltip();
 
 	var basicCardsImport = require("./flashcards-basic.js");
 	var clozeCardsImport = require("./flashcards-cloze.js");
 
-
+	// all useful global variable that i will be changing in my functions below
 	var frontContentExists = false;
 	var inputContent;
 
@@ -82,7 +83,7 @@ $( document ).ready(function() {
 		front();
 
 	});
-
+															// user chooses which type of card they want to create
 	$("#clozeCard").on("click", function() {
 
 		cardTypeChoice = "cloze";
@@ -97,8 +98,8 @@ $( document ).ready(function() {
 
 			$("#theButtons").css("display", "none");
 			$("#message").empty();
-			$("#message").text("What would you like on the front?");
-			$("#input-box").css("display", "block");
+			$("#message").text("What would you like on the front?");				//the buttons will show																			
+			$("#input-box").css("display", "block");								//with a message
 
 			if(flashCards.length) {
 				$("#flashcards-length").html("Number of cards you made: ");
@@ -123,6 +124,8 @@ $( document ).ready(function() {
 	
 	}
 
+	//will run after and only after content was put on the front of the card
+
 	function back() {
 
 		if (cardTypeChoice === "basic") {
@@ -132,7 +135,7 @@ $( document ).ready(function() {
 			$("#message").text("What would you like on the back?");
 			$("#input-box").css("display", "block");
 
-		} else if(cardTypeChoice === "cloze") {
+		} else if(cardTypeChoice === "cloze") {						
 
 			$("#theButtons").css("display", "none");
 			$("#message").empty();
@@ -142,6 +145,8 @@ $( document ).ready(function() {
 		}
 
 	}
+
+	//determines which type of card to make
 
 	function cardType () {
 
@@ -157,6 +162,8 @@ $( document ).ready(function() {
 
 	}
 
+	//this is where the user puts in the values that they want of the front and back
+
 	$("#user-send").on("click", function(e) {
 
 		e.preventDefault();
@@ -169,6 +176,8 @@ $( document ).ready(function() {
 
 	});
 
+	//this is what they click when they want to start studying
+
 	$("#start").on("click", function(e){
 
 		e.preventDefault();
@@ -179,11 +188,15 @@ $( document ).ready(function() {
 
 	});
 
+	//displays next card by calling presentCard() again
+
 	$("#next-button").on("click", function(e){
 		e.preventDefault();
 
 		presentCard();
 	});
+
+	//lets the user add additional cards after they have start studying
 
 	$("#add-card").on("click", function(e){
 		e.preventDefault();
@@ -197,7 +210,7 @@ $( document ).ready(function() {
 
 	})
 
-
+	// this shows the card to the user
 	function presentCard () {
 
 		$("#card").flip({
@@ -239,6 +252,8 @@ $( document ).ready(function() {
 
 	}
 
+	//determines which side of the card needs data input on it
+
 	function determineSide() {
 
 		if(frontContentExists === false) {
@@ -261,6 +276,8 @@ $( document ).ready(function() {
 
 	}
 
+	// creates a basic card by using basicCardsImport
+
 	function makeBasicCard () {
 
 		var basicCardsImport = new Basic(frontCard, backCard);
@@ -279,6 +296,8 @@ $( document ).ready(function() {
 		}
 
 	}
+
+	// creates a cloze card by using clozeCardsImport
 
 	function makeClozeCard () {
 
